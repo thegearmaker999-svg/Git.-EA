@@ -1,140 +1,256 @@
-/* SECCIÓN: media query para moviles */
-@media (max-width: 768px) {
-  .cv-layout {
-    padding: 1rem !important; 
-    max-width: 100%;
-  } 
-
-  .section {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
-  }
-
-  .tarjeta {
-    width: 100% !important; 
-    margin: 0.5rem 0 !important; 
-    padding: 1.5rem !important; 
-  }
-
-  .durante {
-    width: 100%;
-    font-size: 1.2rem;          
-    flex-direction: column;     
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem;
-  }
-
-  .mi-imagen {
-    width: 8rem;                
-    margin: 0 auto;
-  }
-
-  .contacto {
-    width: 100%;
-    justify-content: center;
-  }
+/* Estilos generales */
+* {
+    box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-/* SECCIÓN: contenedor principal */
+body {
+    transition: background-color 0.4s, color 0.4s;
+}
+
 .cv-layout {
     background-color: #ACBCBF;
+    color: #172b36;
     margin: 0 auto;
     max-width: 70rem;
-    padding: 5rem;
+    padding: 3rem;
     display: flex;
     gap: 2rem;
     align-items: center;
-    justify-content: center;
-    flex-direction: column; 
+    flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
 
-/* SECCIÓN: navegacion */
+/* Navegación */
 .durante {
     background-color: #698696;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 30px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
     border-radius: 40px;
     padding: 1rem;
-    width: 90%;
+    width: 100%;
 }
 
-
-/* SECCIÓN: perfil y acerca de mi*/
-.introduccion {
-    max-width: 20rem;
+.durante a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem;
 }
 
+.durante a:hover {
+    text-decoration: underline;
+}
+
+/* Perfil */
 .section {
-    border-radius: 40px;
+    border-radius: 30px;
     background-color: #698696;
     padding: 2rem;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     gap: 1rem;
-    flex: 2;
     flex-wrap: wrap;
 }
 
 .mi-imagen {
     width: 10rem;
     height: auto;
+    border-radius: 20px;
 }
 
-td, th {
-    padding: 1rem; 
+.introduccion {
+    max-width: 22rem;
+}
+
+.frase {
+    font-weight: bold;
+    font-style: italic;
 }
 
 .fondoazuloscuro {
-    border-radius: 40px;
+    border-radius: 25px;
     padding: 1rem;
     background-color: #5289AD;
 }
 
+td, th {
+    padding: 0.7rem;
+    text-align: left;
+}
 
-/* SECCIÓN: contenedores */
-.tarjeta {
-    background-color: #5289AD;
-    padding: 4rem;
-    align-content: center;
-    justify-content: center;
-    margin: 1rem;
-    width: 30%;
-    border-radius: 40px;
-    box-sizing: border-box;
+/* Secciones y tarjetas */
+.pantalla {
+    width: 100%;
+    padding-top: 1rem;
+    scroll-margin-top: 1rem;
 }
 
 .filadetarjetas {
-    border-radius: 40px;
+    border-radius: 30px;
     background-color: #698696;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.tarjeta {
+    background-color: #5289AD;
+    padding: 1.5rem;
+    margin: 0.7rem;
+    width: 30%;
+    min-width: 14rem;
+    border-radius: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 15px #263f4b55;
+}
+
+.tarjeta li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contacto */
+.contacto {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
 }
 
 .fila {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    gap: 4rem;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pie {
+    margin-top: 2rem;
+}
+
+/* Botón y tema alternativo */
+button {
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    background-color: #dce8ec;
+    color: #172b36;
+}
+
+button:hover {
+    background-color: white;
+}
+
+/* Se activa desde JavaScript */
+.tema-oscuro {
+    background-color: #172b36;
+    color: #edf4f6;
+}
+
+.tema-oscuro .section,
+.tema-oscuro .filadetarjetas,
+.tema-oscuro .durante {
+    background-color: #263f4b;
+}
+
+.tema-oscuro .tarjeta,
+.tema-oscuro .fondoazuloscuro {
+    background-color: #365e73;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .cv-layout {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .tarjeta {
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+    }
+
+    .durante {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mi-imagen {
+        width: 8rem;
+    }
+
+    .fila {
+        flex-direction: column;
+    }
 }
 
 
-/* SECCIÓN: CONTACTO        */
-.contacto {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-self: flex-end;
-    margin-right: auto;
+/* Navegación entre las tres pantallas */
+.pantalla {
+    display: none;
+    width: 100%;
+    animation: aparecer 0.35s ease;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+.nav-boton {
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    background-color: #dce8ec;
+    color: #172b36;
+    font-size: 1rem;
+}
+
+.nav-boton:hover,
+.nav-boton.activo {
+    background-color: #172b36;
+    color: white;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
