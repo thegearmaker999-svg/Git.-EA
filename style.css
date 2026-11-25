@@ -1,0 +1,140 @@
+/* SECCIÓN: media query para moviles */
+@media (max-width: 768px) {
+  .cv-layout {
+    padding: 1rem !important; 
+    max-width: 100%;
+  } 
+
+  .section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .tarjeta {
+    width: 100% !important; 
+    margin: 0.5rem 0 !important; 
+    padding: 1.5rem !important; 
+  }
+
+  .durante {
+    width: 100%;
+    font-size: 1.2rem;          
+    flex-direction: column;     
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .mi-imagen {
+    width: 8rem;                
+    margin: 0 auto;
+  }
+
+  .contacto {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* SECCIÓN: contenedor principal */
+.cv-layout {
+    background-color: #ACBCBF;
+    margin: 0 auto;
+    max-width: 70rem;
+    padding: 5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+
+/* SECCIÓN: navegacion */
+.durante {
+    background-color: #698696;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 30px;
+    border-radius: 40px;
+    padding: 1rem;
+    width: 90%;
+}
+
+
+/* SECCIÓN: perfil y acerca de mi*/
+.introduccion {
+    max-width: 20rem;
+}
+
+.section {
+    border-radius: 40px;
+    background-color: #698696;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 2;
+    flex-wrap: wrap;
+}
+
+.mi-imagen {
+    width: 10rem;
+    height: auto;
+}
+
+td, th {
+    padding: 1rem; 
+}
+
+.fondoazuloscuro {
+    border-radius: 40px;
+    padding: 1rem;
+    background-color: #5289AD;
+}
+
+
+/* SECCIÓN: contenedores */
+.tarjeta {
+    background-color: #5289AD;
+    padding: 4rem;
+    align-content: center;
+    justify-content: center;
+    margin: 1rem;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.filadetarjetas {
+    border-radius: 40px;
+    background-color: #698696;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+
+/* SECCIÓN: CONTACTO        */
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-right: auto;
+}
