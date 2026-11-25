@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos básicos del portafolio */
 * {
     box-sizing: border-box;
 }
@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    transition: background-color 0.4s, color 0.4s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cv-layout {
@@ -16,6 +16,7 @@ body {
     color: #172b36;
     margin: 0 auto;
     max-width: 70rem;
+    min-height: 100vh;
     padding: 3rem;
     display: flex;
     gap: 2rem;
@@ -33,7 +34,7 @@ h2 {
     text-align: center;
 }
 
-/* Navegación */
+/* Menú para pasar de un archivo HTML a otro */
 .durante {
     background-color: #698696;
     display: flex;
@@ -53,8 +54,25 @@ h2 {
     padding: 0.5rem;
 }
 
-.durante a:hover {
+.durante a:hover,
+.durante a.seleccionado {
     text-decoration: underline;
+    font-weight: bold;
+}
+
+button, .enlace-boton {
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    background-color: #dce8ec;
+    color: #172b36;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .enlace-boton:hover {
+    background-color: white;
 }
 
 /* Perfil */
@@ -75,13 +93,8 @@ h2 {
     border-radius: 20px;
 }
 
-.introduccion {
-    max-width: 22rem;
-}
-
-.frase {
-    font-weight: bold;
-    font-style: italic;
+.acerca {
+    max-width: 27rem;
 }
 
 .fondoazuloscuro {
@@ -95,13 +108,7 @@ td, th {
     text-align: left;
 }
 
-/* Secciones y tarjetas */
-.pantalla {
-    width: 100%;
-    padding-top: 1rem;
-    scroll-margin-top: 1rem;
-}
-
+/* Tarjetas */
 .filadetarjetas {
     border-radius: 30px;
     background-color: #698696;
@@ -118,23 +125,20 @@ td, th {
     width: 30%;
     min-width: 14rem;
     border-radius: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 .tarjeta:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 8px 15px #263f4b55;
+    transform: translateY(-5px);
 }
 
 .tarjeta li {
     margin-bottom: 0.5rem;
 }
 
-/* Contacto */
-.contacto {
+.bienvenida {
     width: 100%;
     text-align: center;
-    padding: 1rem;
 }
 
 .fila {
@@ -144,25 +148,12 @@ td, th {
     gap: 1rem;
 }
 
-.pie {
-    margin-top: 2rem;
+.centrado, footer {
+    text-align: center;
+    width: 100%;
 }
 
-/* Botón y tema alternativo */
-button {
-    border: none;
-    border-radius: 20px;
-    padding: 0.7rem 1rem;
-    cursor: pointer;
-    background-color: #dce8ec;
-    color: #172b36;
-}
-
-button:hover {
-    background-color: white;
-}
-
-/* Se activa desde JavaScript */
+/* Tema oscuro */
 .tema-oscuro {
     background-color: #172b36;
     color: #edf4f6;
@@ -179,7 +170,7 @@ button:hover {
     background-color: #365e73;
 }
 
-/* Adaptación para celulares */
+/* Diseño para celulares */
 @media (max-width: 768px) {
     .cv-layout {
         padding: 1rem;
@@ -192,65 +183,18 @@ button:hover {
 
     .section {
         flex-direction: column;
-        align-items: center;
         padding: 1rem;
     }
 
     .tarjeta {
         width: 100%;
-        margin: 0.5rem 0;
-        padding: 1.5rem;
     }
 
     .durante {
         flex-direction: column;
-        align-items: center;
     }
 
     .mi-imagen {
         width: 8rem;
-    }
-
-    .fila {
-        flex-direction: column;
-    }
-}
-
-
-/* Navegación entre las tres pantallas */
-.pantalla {
-    display: none;
-    width: 100%;
-    animation: aparecer 0.35s ease;
-}
-
-.pantalla.activa {
-    display: block;
-}
-
-.nav-boton {
-    border: none;
-    border-radius: 20px;
-    padding: 0.7rem 1rem;
-    cursor: pointer;
-    background-color: #dce8ec;
-    color: #172b36;
-    font-size: 1rem;
-}
-
-.nav-boton:hover,
-.nav-boton.activo {
-    background-color: #172b36;
-    color: white;
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
